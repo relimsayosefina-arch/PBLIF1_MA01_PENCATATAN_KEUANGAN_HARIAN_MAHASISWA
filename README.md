@@ -1,6 +1,6 @@
    # Aplikasi Pencatatan Keuangan Harian Mahasiswa
 
-   Proyek PBL Kelompok MA01
+   Proyek PBL Kelompok Ma01
 
 ## Anggota Kelompok
 
