@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-halaman="app">
+
+  <!-- BAGIAN ATAS -->
+  <div class="header">
+    <div class="logo">LOGO</div>
+    <div class="judul-app">Aplikasi Pencatatan Keuangan Harian<br>Mahasiswa</div>
+    <input class="search" type="text" placeholder="Cari transaksi, kategori, atau lainnya...">
+    <div class="user"><div class="avatar"></div> <span id="namaPengguna">Nama Pengguna</span> ▼</div>
+  </div>
+
+  <div class="layout">
+
+    <!-- MENU SAMPING -->
+    <div class="sidebar">
+      <a href="dashboard.html" class="aktif">Dashboard</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="transaksi.html">Transaksi</a>
+      <a href="laporan.html">Laporan</a>
+      <a href="login.html" id="logout">Logout</a>
+    </div>
+
+    <div class="konten">
+      <h1>Dashboard</h1>
+      <p class="sub">Ringkasan keuangan harian Anda</p>
+
+      <!-- 3 kartu ringkasan (angkanya diisi otomatis oleh aplikasi.js) -->
+      <div class="kartu-wrap">
+        <div class="kartu">
+          <div class="ikon">+</div>
+          <div><small>Total Pemasukan</small><div class="angka" id="totalMasuk">Rp 0</div><small>Seluruh pemasukan</small></div>
+        </div>
+        <div class="kartu">
+          <div class="ikon">-</div>
+          <div><small>Total Pengeluaran</small><div class="angka" id="totalKeluar">Rp 0</div><small>Seluruh pengeluaran</small></div>
+        </div>
+        <div class="kartu">
+          <div class="ikon">=</div>
+          <div><small>Saldo</small><div class="angka" id="saldo">Rp 0</div><small>Pemasukan - Pengeluaran</small></div>
+        </div>
+      </div>
+
+      <div class="kotak">
+        <h3>Akses Cepat</h3>
+        <a class="btn btn-utama" href="transaksi.html">Tambah Transaksi</a>
+        <a class="btn" href="kategori.html">Kelola Kategori</a>
+        <a class="btn" href="laporan.html">Lihat Laporan</a>
+      </div>
+
+      <!-- 5 transaksi terbaru (diisi otomatis) -->
+      <div class="kotak">
+        <h3>Transaksi Terbaru</h3>
+        <table>
+          <thead><tr><th>Tanggal</th><th>Jenis</th><th>Kategori</th><th>Keterangan</th><th>Nominal</th></tr></thead>
+          <tbody id="isiTerbaru"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+  <script src="aplikasi.js"></script>
+</body>
+</html>

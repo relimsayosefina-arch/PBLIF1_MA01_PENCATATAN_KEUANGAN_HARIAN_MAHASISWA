@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaksi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-halaman="app">
+
+  <div class="header">
+    <div class="logo">LOGO</div>
+    <div class="judul-app">Aplikasi Pencatatan Keuangan Harian<br>Mahasiswa</div>
+    <input class="search" type="text" placeholder="Cari transaksi, kategori, atau lainnya...">
+    <div class="user"><div class="avatar"></div> <span id="namaPengguna">Nama Pengguna</span> ▼</div>
+  </div>
+
+  <div class="layout">
+
+    <div class="sidebar">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="transaksi.html" class="aktif">Transaksi</a>
+      <a href="laporan.html">Laporan</a>
+      <a href="login.html" id="logout">Logout</a>
+    </div>
+
+    <div class="konten">
+      <h1>Transaksi</h1>
+      <p class="sub">Catat dan kelola transaksi pemasukan dan pengeluaran</p>
+
+      <!-- Form tambah / ubah transaksi -->
+      <div class="kotak">
+        <h3>Form Transaksi</h3>
+        <form id="formTransaksi">
+          <div class="baris">
+            <div class="form-group"><label>Tanggal</label><input type="date" id="tanggal"></div>
+            <div class="form-group"><label>Jenis</label>
+              <select id="jenis"><option value="">Pilih jenis</option><option>Pemasukan</option><option>Pengeluaran</option></select></div>
+            <div class="form-group"><label>Kategori</label>
+              <select id="kategori"><option value="">Pilih kategori</option></select></div>
+            <div class="form-group"><label>Nominal</label><input type="number" id="nominal" min="0" placeholder="Rp 0"></div>
+          </div>
+          <div class="baris rapat">
+            <div class="form-group" style="flex:4"><label>Keterangan</label><input type="text" id="keterangan" placeholder="Tulis keterangan transaksi"></div>
+            <button class="btn btn-utama" type="submit" id="tombolSimpan">Tambah</button>
+            <button class="btn" type="button" id="tombolBatal">Batal</button>
+          </div>
+        </form>
+        <p id="pesan" class="pesan" style="margin-top:12px"></p>
+      </div>
+
+      <!-- Daftar transaksi + filter (diisi otomatis) -->
+      <div class="kotak">
+        <h3>Daftar Transaksi</h3>
+        <form class="baris" id="formFilter">
+          <div class="form-group" style="flex:2"><label>Cari</label><input type="text" id="cari" placeholder="Cari keterangan..."></div>
+          <div class="form-group"><label>Jenis</label>
+            <select id="filterJenis"><option value="">Jenis</option><option>Pemasukan</option><option>Pengeluaran</option></select></div>
+          <div class="form-group"><label>Kategori</label>
+            <select id="filterKategori"><option value="">Kategori</option></select></div>
+          <div class="form-group"><label>Periode mulai</label><input type="date" id="mulai"></div>
+          <div class="form-group"><label>Periode selesai</label><input type="date" id="selesai"></div>
+          <button class="btn btn-utama" type="submit">Filter</button>
+        </form>
+
+        <table style="margin-top:15px">
+          <thead><tr><th>No</th><th>Tanggal</th><th>Jenis</th><th>Kategori</th><th>Nominal</th><th>Keterangan</th><th>Aksi</th></tr></thead>
+          <tbody id="isiTabel"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+  <script src="aplikasi.js"></script>
+</body>
+</html>

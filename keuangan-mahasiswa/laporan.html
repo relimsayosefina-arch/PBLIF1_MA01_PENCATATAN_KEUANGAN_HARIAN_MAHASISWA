@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-halaman="app">
+
+  <div class="header">
+    <div class="logo">LOGO</div>
+    <div class="judul-app">Aplikasi Pencatatan Keuangan Harian<br>Mahasiswa</div>
+    <input class="search" type="text" placeholder="Cari transaksi, kategori, atau lainnya...">
+    <div class="user"><div class="avatar"></div> <span id="namaPengguna">Nama Pengguna</span> ▼</div>
+  </div>
+
+  <div class="layout">
+
+    <div class="sidebar">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="kategori.html">Kategori</a>
+      <a href="transaksi.html">Transaksi</a>
+      <a href="laporan.html" class="aktif">Laporan</a>
+      <a href="login.html" id="logout">Logout</a>
+    </div>
+
+    <div class="konten">
+      <h1>Laporan</h1>
+      <p class="sub">Rekapitulasi keuangan berdasarkan periode dan kategori</p>
+
+      <!-- Filter laporan -->
+      <div class="kotak">
+        <h3>Filter Laporan</h3>
+        <form class="baris" id="formFilter">
+          <div class="form-group"><label>Periode Mulai</label><input type="date" id="mulai"></div>
+          <div class="form-group"><label>Periode Selesai</label><input type="date" id="selesai"></div>
+          <div class="form-group"><label>Kategori</label><select id="filterKategori"><option value="">Semua Kategori</option></select></div>
+          <div class="form-group"><label>Jenis Transaksi</label>
+            <select id="filterJenis"><option value="">Semua Jenis</option><option>Pemasukan</option><option>Pengeluaran</option></select></div>
+          <button class="btn btn-utama" type="submit">Tampilkan</button>
+        </form>
+      </div>
+
+      <!-- 3 kartu ringkasan (diisi otomatis) -->
+      <div class="kartu-wrap">
+        <div class="kartu"><div class="ikon">+</div><div><small>Total Pemasukan</small><div class="angka" id="totalMasuk">Rp 0</div><small>Seluruh pemasukan periode ini</small></div></div>
+        <div class="kartu"><div class="ikon">-</div><div><small>Total Pengeluaran</small><div class="angka" id="totalKeluar">Rp 0</div><small>Seluruh pengeluaran periode ini</small></div></div>
+        <div class="kartu"><div class="ikon">=</div><div><small>Saldo</small><div class="angka" id="saldo">Rp 0</div><small>Pemasukan - Pengeluaran</small></div></div>
+      </div>
+
+      <!-- Dua tabel rekap berdampingan (diisi otomatis) -->
+      <div class="dua-kolom">
+
+        <div class="kotak">
+          <h3>Rekap Pemasukan</h3>
+          <table>
+            <thead><tr><th>Periode</th><th>Kategori</th><th>Jumlah Transaksi</th><th>Total Nominal</th></tr></thead>
+            <tbody id="rekapMasuk"></tbody>
+            <tfoot><tr><td colspan="2">Total</td><td class="tengah" id="jumlahMasuk">0</td><td class="kanan" id="nominalMasuk">Rp 0</td></tr></tfoot>
+          </table>
+        </div>
+
+        <div class="kotak">
+          <h3>Rekap Pengeluaran</h3>
+          <table>
+            <thead><tr><th>Periode</th><th>Kategori</th><th>Jumlah Transaksi</th><th>Total Nominal</th></tr></thead>
+            <tbody id="rekapKeluar"></tbody>
+            <tfoot><tr><td colspan="2">Total</td><td class="tengah" id="jumlahKeluar">0</td><td class="kanan" id="nominalKeluar">Rp 0</td></tr></tfoot>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+  <script src="aplikasi.js"></script>
+</body>
+</html>

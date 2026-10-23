@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BAGIAN ATAS -->
+  <div class="header">
+    <div class="logo">LOGO</div>
+    <div class="judul-app">Aplikasi Pencatatan Keuangan Harian<br>Mahasiswa</div>
+  </div>
+
+  <!-- ISI HALAMAN: kotak login di tengah -->
+  <div class="halaman-auth">
+    <div class="kotak-auth">
+      <h1>Login</h1>
+      <p class="sub">Masuk untuk mengelola keuangan harianmu</p>
+
+      <!-- Setelah klik "Masuk", pindah ke halaman dashboard -->
+      <form id="formLogin">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="username" placeholder="Masukkan username">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password" placeholder="Masukkan password">
+        </div>
+        <p id="pesan" class="pesan"></p>
+        <button class="btn btn-utama btn-penuh" type="submit">Masuk</button>
+      </form>
+
+      <p class="link-bawah">Belum punya akun? <a href="registrasi.html">Registrasi</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kategori</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-halaman="app">
+
+  <div class="header">
+    <div class="logo">LOGO</div>
+    <div class="judul-app">Aplikasi Pencatatan Keuangan Harian<br>Mahasiswa</div>
+    <input class="search" type="text" placeholder="Cari transaksi, kategori, atau lainnya...">
+    <div class="user"><div class="avatar"></div> <span id="namaPengguna">Nama Pengguna</span> ▼</div>
+  </div>
+
+  <div class="layout">
+
+    <div class="sidebar">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="kategori.html" class="aktif">Kategori</a>
+      <a href="transaksi.html">Transaksi</a>
+      <a href="laporan.html">Laporan</a>
+      <a href="login.html" id="logout">Logout</a>
+    </div>
+
+    <div class="konten">
+      <h1>Kategori</h1>
+      <p class="sub">Kelola kategori pemasukan dan pengeluaran</p>
+
+      <!-- Form tambah / ubah kategori -->
+      <div class="kotak">
+        <h3>Form Kategori</h3>
+        <form class="baris" id="formKategori">
+          <div class="form-group">
+            <label>Jenis Kategori</label>
+            <select id="jenisKategori">
+              <option value="">Pilih jenis kategori</option>
+              <option>Pemasukan</option>
+              <option>Pengeluaran</option>
+            </select>
+          </div>
+          <div class="form-group" style="flex:2">
+            <label>Nama Kategori</label>
+            <input type="text" id="namaKategori" placeholder="Contoh: Makan &amp; Minum">
+          </div>
+          <button class="btn btn-utama" type="submit" id="tombolSimpan">Tambah Kategori</button>
+          <button class="btn" type="button" id="tombolBatal">Batal</button>
+        </form>
+        <p id="pesan" class="pesan" style="margin-top:12px"></p>
+      </div>
+
+      <!-- Tabel daftar kategori (diisi otomatis) -->
+      <div class="kotak">
+        <div class="baris" style="justify-content:space-between; align-items:center;">
+          <h3>Daftar Kategori</h3>
+          <select id="filterJenis" style="width:170px">
+            <option value="">Semua Jenis</option>
+            <option>Pemasukan</option>
+            <option>Pengeluaran</option>
+          </select>
+        </div>
+        <table style="margin-top:12px">
+          <thead><tr><th>No</th><th>Nama Kategori</th><th>Jenis</th><th>Aksi</th></tr></thead>
+          <tbody id="isiTabel"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+  <script src="aplikasi.js"></script>
+</body>
+</html>
